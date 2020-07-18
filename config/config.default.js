@@ -26,6 +26,24 @@ module.exports = appInfo => {
     };
   }
 
+  config.mongoose = {
+    clients: {
+      db1: {
+        url: 'mongodb://develop:developpwd@localhost:27017/blog',
+        options: {
+          server: {
+            poolSize: 40,
+          }
+        }
+      }
+    }
+  }
+
+  config.cors = {
+    origin: '*',
+    allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH'
+  }
+
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + '_1586770407328_8776';
 
@@ -39,6 +57,10 @@ module.exports = appInfo => {
   config.news = {
     pageSize: 5,
     serverUrl: 'https://hacker-news.firebaseio.com/v0',
+  };
+
+  config.querykeyWord = {
+    keyWord: 'macbook pro 13.3 256G'
   };
 
   // add your middleware config here
